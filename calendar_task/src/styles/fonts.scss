@@ -1,0 +1,25 @@
+@font-face {
+  font-family: 'cooperhewitt';
+  src: url('../fonts/CooperHewitt-Bold.woff'),
+  url('../fonts/CooperHewitt-Bold.eot?#iefix') format('embedded-opentype'),
+  url('../fonts/CooperHewitt-Bold.woff2') format('woff2'),
+  url('../fonts/CooperHewitt-Bold.woff') format('woff'),
+  url('../fonts/CooperHewitt-Bold.ttf') format('truetype'),
+  url('../fonts/CooperHewitt-Bold.svg#CooperHewitt-Bold') format('svg');
+  font-weight: 500;
+  font-style: normal;
+  font-display: auto;
+}
+
+@font-face {
+  font-family: 'cooperhewitt';
+  src: url('../fonts/CooperHewitt-Bold.eot'),
+  url('../fonts/CooperHewitt-Bold.eot?#iefix') format('embedded-opentype'),
+  url('../fonts/CooperHewitt-Bold.woff2') format('woff2'),
+  url('../fonts/CooperHewitt-Bold.woff') format('woff'),
+  url('../fonts/CooperHewitt-Bold.ttf') format('truetype'),
+  url('../fonts/CooperHewitt-Bold.svg#CooperHewitt-Bold') format('svg');
+  font-weight: bold;
+  font-style: normal;
+  font-display: auto;
+}

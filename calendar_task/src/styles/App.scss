@@ -1,0 +1,108 @@
+@import url('https://cdn.syncfusion.com/ej2/material.css');
+@import './fonts.scss';
+@import './variables';
+
+.App {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: #f7f5f3;
+  width: 220px;
+  font-family: 'cooperhewitt';
+  color: $support-blue-500;
+  .para {
+    align-self: center;
+    width: 170px;
+    p {
+      font-size: 16px;
+      span {
+        background-color: #e7e6e4;
+        margin-left: 10px;
+        font-size: 12px;
+      }      
+    }
+  }
+
+  .calendar-btn {
+    display: flex;
+    overflow: hidden;
+    justify-content: space-between;
+    width: 200px;
+    height: 50px;
+    background-color: fff;
+    align-self: center;
+    margin-bottom: 10px;
+    border-radius:3px;
+    box-shadow: 0 6px 16px 2px rgba(0, 0, 0, 0.15);
+    .calendar-btn-left {
+      display: flex;
+      margin: 0px 5px 5px 5px;
+      justify-content: center;
+      flex-direction: column;
+      .calendar-btn-left-lower {
+        display: flex;
+      }
+    }
+    .calendar-btn-right {
+      display: flex;
+      margin: 5px;
+      justify-content: center;
+      flex-direction: column;
+      .calendar-btn-right-lower {
+        display: flex;
+      }
+      .selected-date {
+        font-size: 10px;
+        position: relative;
+        top: -12px;
+      }
+    }
+    .van {
+      width: 15px;
+      height: 10px;
+      margin-right: 5px;
+      margin-top: 3px;
+    }
+    .calendar-btn-left-upper {
+      font-size: 12px;
+      margin-top: 10px;
+    }
+    .calendar-btn-right-upper {
+      width: 20px;
+      height: 20px;
+    }
+    .calendar-btn-left-lower-word {
+      font-size: 10px;
+      margin-top: 3px;
+    }
+    .calendar-btn-right-lower {
+      font-size: 10px;
+      margin-top: 3px;
+    }
+    .calendar-btn-right {
+      align-items: center;
+      margin-top: 10px;
+      background-color: #c4dbe9;
+      width: 80px;
+      height: 80px;
+      border-radius: 40px;
+      margin-top: -13px;
+      margin-right: -10px;
+      cursor: pointer;
+      .calendar-btn-right-lower {
+        margin-top: -10px;
+        display: flex;
+        span: {
+          text-decoration: none;
+        }
+        .calendar-btn-right-lower-word {
+          text-decoration: underline;
+          margin-right: 3px;
+        }
+        .calendar-btn-right-lower-arrow {
+          margin-top: 2px;
+        }
+      }
+    }
+  }
+}
