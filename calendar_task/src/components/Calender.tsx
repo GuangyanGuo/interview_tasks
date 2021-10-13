@@ -19,7 +19,7 @@ const Calendar = ({changeDate, deliveryDate}:{changeDate: changeDateFunc, delive
       changeDate(newDate);
     }
   }
-  
+
   const onChange = (args: ChangedEventArgs) => {
     if (args.value) {
       setNewDate(new Date(args.value));
