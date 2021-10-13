@@ -3,10 +3,10 @@ import { CalendarComponent, ChangedEventArgs } from '@syncfusion/ej2-react-calen
 
 type changeDateFunc = (d: Date) => void;
 
-const Calendar = ({changeDate, deliveryDate}:{changeDate: changeDateFunc, deliveryDate: Date}) => {
+const Calendar = ({changeDate, deliveryDate, removeModal}:{changeDate: changeDateFunc, deliveryDate: Date, removeModal: () => void}) => {
   const [newDate, setNewDate] = useState(deliveryDate);
 
-  const closeModal = (change: boolean) => {
+  const animateOut = (change: boolean) => {
     const interval = setInterval(() => {
       const modalDiv: HTMLElement | null = document.querySelector('.ReactModal__Overlay.ReactModal__Overlay--after-open');
       if (modalDiv) {
@@ -18,6 +18,9 @@ const Calendar = ({changeDate, deliveryDate}:{changeDate: changeDateFunc, delive
     if (change) {
       changeDate(newDate);
     }
+    setTimeout(() => {
+      removeModal();
+    }, 1500);
   }
 
   const onChange = (args: ChangedEventArgs) => {
@@ -30,8 +33,8 @@ const Calendar = ({changeDate, deliveryDate}:{changeDate: changeDateFunc, delive
     <div className="calendar">
       <CalendarComponent change={onChange} />
       <div className="footer-btn">
-        <div className="cancel" role="button" tabIndex={0} onClick={() => closeModal(false)}>CANCEL,<br />DON'T CHANGE</div>
-        <div className="change-date" role="button" tabIndex={0} onClick={() => closeModal(true)}>CHANGE DATE</div>
+        <div className="cancel" role="button" tabIndex={0} onClick={() => animateOut(false)}>CANCEL,<br />DON'T CHANGE</div>
+        <div className="change-date" role="button" tabIndex={0} onClick={() => animateOut(true)}>CHANGE DATE</div>
       </div>
     </div>)
 }

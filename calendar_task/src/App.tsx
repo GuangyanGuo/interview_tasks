@@ -12,7 +12,7 @@ import Calendar from './components/Calender';
 const App = () => {
   const [showModal, setShowModal] = useState(false);
   const [deliveryDate, setDeliveryDate] = useState(new Date());
-  const showPopup = () => {
+  const animateModalIn = () => {
     setShowModal(true);
     
     const interval = setInterval(() => {
@@ -34,6 +34,9 @@ const App = () => {
       }
     }, 500);  
   }
+  const removeModal = () => {
+    setShowModal(false);
+  }
   const changeDate = (date: Date) => {
     setDeliveryDate(date);
   }
@@ -54,7 +57,7 @@ const App = () => {
             <div className="calendar-btn-left-lower-word">Earlist delivery</div>
           </div>
         </div>
-        <div className="calendar-btn-right" role="button" tabIndex={-1} onClick={showPopup}>
+        <div className="calendar-btn-right" role="button" tabIndex={-1} onClick={animateModalIn}>
           <img src={icoCalendar} alt="calendar" className="calendar-btn-right-upper" />
           <div className="selected-date">{deliveryDate.getDate()}</div>
           <div className="calendar-btn-right-lower">
@@ -81,7 +84,7 @@ const App = () => {
             beforeClose: 'calendar-modal',
           }}
         >
-        <Calendar changeDate={changeDate} deliveryDate={deliveryDate} />
+        <Calendar changeDate={changeDate} deliveryDate={deliveryDate} removeModal={removeModal} />
       </ReactModal>)}
     </div>
   )
