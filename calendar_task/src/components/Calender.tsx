@@ -24,6 +24,7 @@ const Calendar = ({changeDate, deliveryDate, removeModal}:{changeDate: changeDat
   }
 
   const onChange = (args: ChangedEventArgs) => {
+    console.log('args', args);
     if (args.value) {
       setNewDate(new Date(args.value));
     }

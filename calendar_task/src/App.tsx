@@ -31,6 +31,18 @@ const App = () => {
             }
           }
         });
+        setTimeout(() => {
+          const weeks = document.querySelectorAll('.e-content.e-month tbody tr');
+          for (let i = 0; i < weeks.length; i++) {
+            const days = weeks[i].getElementsByTagName('td');
+            for (let j = 0; j < days.length; j++) {
+              const date = + days[j].children[0].innerHTML;
+              if (date < deliveryDate.getDate() || date % 7 === 0 || date % 7 === 1 || date % 7 === 4) {
+                days[j].classList.add('e-disabled');
+              }
+            }
+          }
+        }, 1000);
       }
     }, 500);  
   }
@@ -70,7 +82,7 @@ const App = () => {
         <ReactModal
           isOpen={showModal}
           closeTimeoutMS={0}
-          ariaHideApp
+          ariaHideApp={false}
           shouldCloseOnOverlayClick
           role="calendar"
           style={{
